@@ -20,8 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.vert,
       ),
-      builder: (_, child) => MainPage(
-        child: child ?? const HomePage(),
+      builder: (_, child) => Overlay(
+        initialEntries: [
+          OverlayEntry(
+            builder: (_) => MainPage(
+              child: child ?? const HomePage(),
+            ),
+          )
+        ],
       ),
       initialRoute: routeHome,
       navigatorKey: navKey,
