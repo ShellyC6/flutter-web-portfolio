@@ -11,7 +11,7 @@ class MainPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const NavbarWidget(),
+          NavbarWidget(),
           Expanded(child: child),
         ],
       ),

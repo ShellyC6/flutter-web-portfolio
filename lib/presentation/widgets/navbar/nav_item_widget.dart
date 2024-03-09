@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:shelly_caprice/core/routes/routes.dart';
 
+import '../../../core/constants/colors.dart';
+
 class NavItemWidget extends StatelessWidget {
   final String title;
   final String routeName;
-  const NavItemWidget({super.key, required this.title, required this.routeName});
+  final bool selected;
+  final Function onHighlight;
+
+  const NavItemWidget({
+    super.key,
+    required this.title,
+    required this.routeName,
+    required this.selected,
+    required this.onHighlight,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +24,22 @@ class NavItemWidget extends StatelessWidget {
       child: TextButton(
         onPressed: () {
           navKey.currentState?.pushNamed(routeName);
+          onHighlight(routeName);
         },
         child: Text(
           title,
-          style: const TextStyle(fontSize: 20.0),
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Colors.transparent,
+            shadows: const [
+              Shadow(
+                  color: AppColors.blanc,
+                  offset: Offset(0, -5))
+            ],
+            decoration: (selected) ? TextDecoration.underline : null,
+            decorationColor: AppColors.blanc,
+            decorationThickness: 2,
+          ),
         ),
       ),
     );
