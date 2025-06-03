@@ -32,7 +32,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
             onHighlight: widget.onHighlight,
           ),
           NavItemWidget(
-            title: "Portfolio",
+            title: "Projets",
             routeName: routePortfolio,
             selected: widget.index==1,
             onHighlight: widget.onHighlight,

@@ -26,7 +26,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             onHighlight: widget.onHighlight,
           ),
           DrawerItemWidget(
-            title: "Portfolio",
+            title: "Projets",
             routeName: routePortfolio,
             selected: widget.index==1,
             onHighlight: widget.onHighlight,
